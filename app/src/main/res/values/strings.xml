@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Converter</string>
+    <string name="SQUARE">Площадь</string>
+    <string name="LENGTH">Длина</string>
+    <string name="WEIGHT">Вес</string>
+
+    <string name="kilometre">Километр</string>
+    <string name="metre">Метр</string>
+    <string name="centimetre">Сантиметр</string>
+    <string name="hectare">Гектар</string>
+</resources>
