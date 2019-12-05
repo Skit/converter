@@ -8,27 +8,34 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
-    private final List<Convertation> convertations;
+    private final List<Convertation> convertations = new ArrayList<>();
+    private final ClickListener listener;
 
-    public MainAdapter(List<Convertation> convertation) {
-        convertations = convertation;
+    MainAdapter(ClickListener click) {
+        listener = click;
+    }
+
+    void update(List<Convertation> c) {
+        convertations.clear();
+        convertations.addAll(c);
+        notifyDataSetChanged();
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View view = layoutInflater.inflate(R.layout.unit_adapter_item, parent, false);
+        View view = layoutInflater.inflate(R.layout.main_adapter_item, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        final Convertation convertation = convertations.get(position);
-        holder.bindView(convertation);
+        holder.bind(convertations.get(position), listener);
     }
 
     @Override
@@ -45,8 +52,9 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
             textView = itemView.findViewById(R.id.text_view_item);
         }
 
-        public void bindView(Convertation convertation) {
+        public void bind(Convertation convertation, ClickListener listener) {
             textView.setText(convertation.label);
+            itemView.setOnClickListener(v -> listener.onItemClick(convertation));
         }
     }
 }

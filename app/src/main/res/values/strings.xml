@@ -2,10 +2,16 @@
     <string name="app_name">Converter</string>
     <string name="SQUARE">Площадь</string>
     <string name="LENGTH">Длина</string>
-    <string name="WEIGHT">Вес</string>
-
     <string name="kilometre">Километр</string>
+    <string name="mile">Миля</string>
     <string name="metre">Метр</string>
     <string name="centimetre">Сантиметр</string>
-    <string name="hectare">Гектар</string>
+    <string name="millimetre">Милиметр</string>
+    <string name="micrometre">Микрометр</string>
+    <string name="SQ_KILOMETRE">Кв. километр</string>
+    <string name="SQ_METRE">Кв. метр</string>
+    <string name="SQ_CENTIMETRE">Кв. сантиметр</string>
+    <string name="SQ_HECTARE">Кв. сантиметр</string>
+    <string name="to">В</string>
+    <string name="from">Из</string>
 </resources>
